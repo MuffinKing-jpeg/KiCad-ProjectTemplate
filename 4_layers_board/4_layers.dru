@@ -1,0 +1,30 @@
+(version 1)
+(rule default_clearance
+	(constraint clearance (min 0.2mm))
+)
+(rule default_edge
+	(constraint edge_clearance (min 0.5mm))
+)
+(rule default_courtyard
+	(constraint courtyard_clearance (min 0.1mm))
+)
+(rule default_track-to-pad
+	(constraint physical_clearance (min 0.2mm))
+)
+(rule default_coper-to-hole
+	(constraint hole_clearance (min 0.25mm))
+)
+(rule minimum_spokes
+	(constraint min_resolved_spokes 2)
+)
+(rule default_via
+	(constraint via_diameter (min 0.6mm) (max 1.15mm))
+	(constraint hole_size (min 0.3mm) (max 1mm))
+)
+(rule default_hole-to-hole
+	(constraint hole_to_hole (min 0.45mm))
+)
+(rule "Vias under SMD 1"
+	(constraint disallow via)
+	(condition "A.Pad_Type == 'SMD'")
+)
